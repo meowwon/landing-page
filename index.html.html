@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MARÉ Coffee — Coffee 24H & Handmade Workshop</title>
+<meta name="description" content="MARÉ Coffee — không gian coffee 24H kết hợp handmade workshop, học tập, sáng tạo và trải nghiệm cá nhân hóa.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#173f52;--blue:#2f7286;--sky:#e8f4f5;--cream:#fbfaf6;--sand:#e9dfcf;--ink:#20313a;--muted:#6d7b80;--white:#fff;--line:#dfe8e9;--shadow:0 18px 50px rgba(25,61,74,.10);--radius:22px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.6} a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit}
+.topbar{background:var(--navy);color:#fff;text-align:center;font-size:13px;padding:8px 20px;letter-spacing:.2px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,246,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,76px)}
+.logo{font-family:"Playfair Display";font-size:30px;color:var(--navy);font-weight:700;line-height:.8} .logo small{display:block;font:600 8px "DM Sans";letter-spacing:2px;margin-top:7px;color:var(--blue)}
+.navlinks{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:600} .navlinks a:hover{color:var(--blue)} .nav-cta,.primary{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 19px;font-weight:700;cursor:pointer;transition:.2s} .nav-cta:hover,.primary:hover{transform:translateY(-2px);background:var(--blue)}
+.hero{min-height:640px;display:grid;grid-template-columns:1fr 1.05fr;gap:45px;align-items:center;padding:70px clamp(20px,7vw,110px);background:linear-gradient(110deg,#eef6f5 0%,#f8f4ec 60%,#e8f1f1 100%)}
+.hero-copy .eyebrow,.eyebrow{color:var(--blue);font-weight:800;font-size:12px;letter-spacing:2.5px;text-transform:uppercase} h1{font:700 clamp(52px,6vw,88px)/.98 "Playfair Display";color:var(--navy);margin:17px 0} .hero-copy p{font-size:18px;color:#52656b;max-width:570px} .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap} .ghost{padding:12px 19px;border:1px solid var(--navy);border-radius:999px;font-weight:700;background:transparent}
+.hero-img{height:510px;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);position:relative} .hero-img img{width:100%;height:100%;object-fit:cover} .hero-badge{position:absolute;bottom:22px;left:22px;background:#fff;padding:15px 18px;border-radius:16px;box-shadow:0 10px 30px #173f5220;font-size:13px}
+.container{max-width:1200px;margin:auto;padding:90px 24px} .section-head{text-align:center;max-width:700px;margin:0 auto 42px} h2{font:600 clamp(35px,4vw,54px)/1.05 "Playfair Display";color:var(--navy);margin:10px 0 15px} .lead{color:var(--muted);font-size:17px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px} .feature{padding:28px;background:#fff;border:1px solid var(--line);border-radius:20px} .feature .icon{font-size:28px} .feature h3{margin:12px 0 6px;color:var(--navy)} .feature p{margin:0;color:var(--muted);font-size:14px}
+.menu-wrap{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)} .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:30px 0 38px} .tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 18px;cursor:pointer;font-weight:700;color:#52656b} .tab.active,.tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)} .products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px} .product-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;display:flex;flex-direction:column} .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)} .product-img{height:220px;position:relative;background:var(--sky);overflow:hidden} .product-img img{width:100%;height:100%;object-fit:cover} .pill{position:absolute;top:12px;left:12px;background:#ffffffdf;color:var(--navy);font-size:10px;font-weight:800;letter-spacing:1px;padding:6px 9px;border-radius:999px} .product-body{padding:18px;display:flex;flex-direction:column;flex:1} .product-body h3{margin:0 0 6px;color:var(--navy);font-size:17px} .product-body p{margin:0 0 18px;color:var(--muted);font-size:13px;min-height:42px} .product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:8px} .product-bottom strong{color:var(--blue)} .add-btn{border:0;background:var(--sky);color:var(--navy);padding:9px 11px;border-radius:10px;font-weight:700;cursor:pointer} .add-btn:hover{background:var(--navy);color:#fff}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center} .photo{border-radius:28px;overflow:hidden;height:500px;box-shadow:var(--shadow)} .photo img{width:100%;height:100%;object-fit:cover} .checklist{padding:0;list-style:none} .checklist li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px} .checklist li:before{content:"✓";color:var(--blue);font-weight:800;margin-right:12px}
+.workshop-section{background:var(--sky)} .workshop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px} .work-card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #d8e8e8;transition:.25s} .work-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)} .work-card img{width:100%;height:200px;object-fit:cover} .work-card .wbody{padding:18px} .wbody h3{margin:0;color:var(--navy)} .wbody p{color:var(--muted);font-size:13px;min-height:42px} .wfoot{display:flex;justify-content:space-between;align-items:center;color:var(--blue);font-weight:800} .detail{border:0;background:transparent;text-decoration:underline;cursor:pointer;color:var(--navy);font-weight:700}
+.booking-band{background:var(--navy);color:#fff} .booking-band h2{color:#fff} .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start} .booking-info p{color:#c8d7db} .booking-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px} .bp{border:1px solid #ffffff22;border-radius:15px;padding:15px} .form-card{background:#fff;border-radius:24px;padding:25px;color:var(--ink);box-shadow:var(--shadow)} .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px} label{font-size:12px;font-weight:800;color:#52656b;display:block;margin-bottom:6px} input,select,textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;outline:none} input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2f728615} .full{grid-column:1/-1} .submit{width:100%;margin-top:14px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px} .review{background:#fff;border:1px solid var(--line);padding:24px;border-radius:20px} .stars{color:#c7953e;letter-spacing:2px} .review p{font-size:14px} .review b{color:var(--navy);font-size:13px}
+.footer{background:#102f3d;color:#d8e7e9;padding:50px max(24px,7vw);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px} .footer h3{color:#fff;font-family:"Playfair Display";font-size:24px;margin:0 0 12px} .footer p,.footer a{font-size:13px;color:#afc3c8} .copyright{grid-column:1/-1;border-top:1px solid #ffffff18;padding-top:18px;font-size:12px;color:#86a4ac}
+.cart{position:fixed;right:22px;bottom:22px;z-index:80;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:14px 20px;box-shadow:0 12px 30px #173f5240;cursor:pointer;font-weight:800} .cart span{background:#fff;color:var(--navy);border-radius:999px;padding:2px 7px;margin-left:5px}
+.drawer{position:fixed;inset:0;background:#0007;z-index:100;display:none;align-items:flex-end;justify-content:flex-end} .drawer.open{display:flex} .cart-panel{height:100%;width:min(440px,100%);background:#fff;padding:28px;overflow:auto} .close{float:right;border:0;background:#eef4f4;border-radius:50%;width:36px;height:36px;cursor:pointer} .cart-item{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)} .cart-item small{display:block;color:var(--muted)} .total{font-size:20px;font-weight:800;color:var(--navy);display:flex;justify-content:space-between;margin:25px 0} .empty{color:var(--muted);padding:40px 0;text-align:center}
+.modal{position:fixed;inset:0;background:#0008;z-index:120;display:none;align-items:center;justify-content:center;padding:20px} .modal.open{display:flex} .modal-box{background:#fff;max-width:560px;width:100%;border-radius:24px;padding:28px;position:relative} .modal-box h3{font:600 30px "Playfair Display";color:var(--navy);margin:0 0 8px} .modal-box p{color:var(--muted)} .modal-close{position:absolute;right:18px;top:18px;border:0;background:#eef4f4;border-radius:50%;width:34px;height:34px;cursor:pointer}
+.toast{position:fixed;top:92px;right:22px;background:var(--navy);color:#fff;padding:13px 17px;border-radius:12px;z-index:150;transform:translateX(130%);transition:.3s} .toast.show{transform:translateX(0)}
+@media(max-width:1000px){.navlinks{gap:12px} .products,.workshop-grid{grid-template-columns:repeat(2,1fr)} .features{grid-template-columns:repeat(2,1fr)} .hero{grid-template-columns:1fr} .hero-img{height:400px} .split,.booking-grid{grid-template-columns:1fr} .reviews{grid-template-columns:1fr} .footer{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.nav{height:auto;padding:14px 18px;gap:10px} .navlinks a:not(.nav-cta){display:none} .hero{padding:55px 20px} h1{font-size:52px} .container{padding:65px 18px} .products,.workshop-grid,.features{grid-template-columns:1fr} .form-grid,.booking-points{grid-template-columns:1fr} .footer{grid-template-columns:1fr} .hero-img{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar">MARÉ COFFEE · MỞ CỬA 24H · COFFEE & HANDMADE WORKSHOP</div>
+<header class="nav">
+  <a href="#home" class="logo">MARÉ<small>COFFEE · WORKSHOP · GOOD VIBES</small></a>
+  <nav class="navlinks">
+    <a href="#menu">Menu</a><a href="#why">Về MARÉ</a><a href="#workshop">Workshop</a><a href="#reviews">Đánh giá</a>
+    <a href="#booking" class="nav-cta">Đặt lịch</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Coffee 24H · Handmade Experience</div>
+    <h1>Cùng MARÉ<br>tạo điều riêng.</h1>
+    <p>Một không gian để học, làm việc, gặp gỡ và tự tay tạo nên những món quà mang dấu ấn của chính bạn.</p>
+    <div class="hero-actions"><a class="nav-cta" href="#menu">Xem menu</a><a class="ghost" href="#workshop">Khám phá workshop</a></div>
+  </div>
+  <div class="hero-img"><img src="images/hero-space.png" alt="Không gian MARÉ Coffee"><div class="hero-badge">☕ Coffee 24H · 🐚 Handmade · ♡ Good vibes</div></div>
+</section>
+
+<section class="container">
+  <div class="section-head"><div class="eyebrow">Một điểm đến, nhiều trải nghiệm</div><h2>MARÉ không chỉ là cà phê.</h2><p class="lead">Kết hợp coffee 24H và handmade workshop trong một không gian mang cảm hứng biển — nơi bạn có thể ở lại lâu hơn, sáng tạo nhiều hơn.</p></div>
+  <div class="features">
+    <div class="feature"><div class="icon">☕</div><h3>Coffee 24H</h3><p>Học tập, làm việc hoặc trò chuyện bất cứ lúc nào.</p></div>
+    <div class="feature"><div class="icon">🐚</div><h3>Workshop đa dạng</h3><p>Từ vòng tay, phone charm đến gương và tranh vỏ sò.</p></div>
+    <div class="feature"><div class="icon">✦</div><h3>Cá nhân hóa</h3><p>Tự chọn màu, phụ kiện và cách phối theo câu chuyện riêng.</p></div>
+    <div class="feature"><div class="icon">♡</div><h3>Mang về kỷ niệm</h3><p>Thành phẩm do chính bạn hoàn thiện và mang về.</p></div>
+  </div>
+</section>
+
+<section class="menu-wrap" id="menu">
+<div class="container">
+  <div class="section-head"><div class="eyebrow">MARÉ Menu</div><h2>Chọn món bạn thích.</h2><p class="lead">Bấm “Thêm vào đơn” để chọn đồ uống. Đơn hàng được lưu ngay trên trang và có thể gửi cùng thông tin đặt lịch.</p></div>
+  <div class="tabs">
+    <button class="tab active" onclick="filterProducts('all',this)">Tất cả</button>
+    <button class="tab" onclick="filterProducts('coffee',this)">Cà phê</button>
+    <button class="tab" onclick="filterProducts('tea',this)">Trà</button>
+    <button class="tab" onclick="filterProducts('noncoffee',this)">Non-coffee</button>
+  </div>
+  <div class="products">
+<article class="product-card" data-cat="coffee" data-kind="drink" data-name="Bạc Sỉu Sài Gòn" data-price="40000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/47/5a/21/475a21568e4de16f5776a9bace025173.jpg" alt="Bạc Sỉu Sài Gòn" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Bạc Sỉu Sài Gòn</h3><p>Cà phê pha phin, sữa tươi béo nhẹ</p>
+    <div class="product-bottom"><strong>40.000đ</strong>
+      <button class="add-btn" onclick="addItem('Bạc Sỉu Sài Gòn', 40000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="coffee" data-kind="drink" data-name="Latte" data-price="50000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/d3/32/fd/d332fd633190b268c74c5ffe21ab98bb.jpg" alt="Latte" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Latte</h3><p>Espresso & sữa tươi, nóng hoặc đá</p>
+    <div class="product-bottom"><strong>50.000đ</strong>
+      <button class="add-btn" onclick="addItem('Latte', 50000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="coffee" data-kind="drink" data-name="Americano" data-price="40000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/0e/52/30/0e52308b27b6b9ea83aa371c0b01a5a8.jpg" alt="Americano" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Americano</h3><p>Đậm vị espresso, thanh và dễ uống</p>
+    <div class="product-bottom"><strong>40.000đ</strong>
+      <button class="add-btn" onclick="addItem('Americano', 40000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Lài Dâu Tươi" data-price="48000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/00/96/4b/00964bb177baee775d20ae5b4314181f.jpg" alt="Trà Lài Dâu Tươi" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Lài Dâu Tươi</h3><p>Trà lài thơm dịu & dâu tây Đà Lạt</p>
+    <div class="product-bottom"><strong>48.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Lài Dâu Tươi', 48000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Mãng Cầu Xiêm" data-price="48000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/67/ea/b9/67eab94eddf67eb1bc3c017afc8fe1e0.jpg" alt="Trà Mãng Cầu Xiêm" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Mãng Cầu Xiêm</h3><p>Chua ngọt tự nhiên, giải nhiệt</p>
+    <div class="product-bottom"><strong>48.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Mãng Cầu Xiêm', 48000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Ổi Hồng" data-price="48000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/0b/03/34/0b0334feee01bf70308dfb7a531a7327.jpg" alt="Trà Ổi Hồng" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Ổi Hồng</h3><p>Ngọt thanh, thơm nhẹ</p>
+    <div class="product-bottom"><strong>48.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Ổi Hồng', 48000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Nhiệt Đới" data-price="50000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/7e/41/65/7e41653d9afba3c5c6caad0aee8176bb.jpg" alt="Trà Nhiệt Đới" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Nhiệt Đới</h3><p>Trái cây tươi, chua ngọt sảng khoái</p>
+    <div class="product-bottom"><strong>50.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Nhiệt Đới', 50000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Atiso Đỏ" data-price="55000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/03/fc/b1/03fcb10d3188ca77ae7d7a713622f751.jpg" alt="Trà Atiso Đỏ" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Atiso Đỏ</h3><p>Vị chua thanh đặc trưng</p>
+    <div class="product-bottom"><strong>55.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Atiso Đỏ', 55000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="tea" data-kind="drink" data-name="Trà Vải" data-price="48000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/b6/ef/15/b6ef152c7298e2fb71be34a495228ee0.jpg" alt="Trà Vải" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Trà Vải</h3><p>Vị vải ngọt thanh, thơm nhẹ</p>
+    <div class="product-bottom"><strong>48.000đ</strong>
+      <button class="add-btn" onclick="addItem('Trà Vải', 48000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="noncoffee" data-kind="drink" data-name="Matcha Latte" data-price="55000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/45/9a/fb/459afbc3f9000c8001ab06e67549b924.jpg" alt="Matcha Latte" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Matcha Latte</h3><p>Matcha Uji & sữa tươi</p>
+    <div class="product-bottom"><strong>55.000đ</strong>
+      <button class="add-btn" onclick="addItem('Matcha Latte', 55000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="noncoffee" data-kind="drink" data-name="Socola Latte" data-price="55000">
+  <div class="product-img"><img src="https://i.pinimg.com/1200x/b7/18/bf/b718bf6c4b08d25266dc7e137121dde4.jpg" alt="Socola Latte" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Socola Latte</h3><p>Socola đậm vị & sữa tươi</p>
+    <div class="product-bottom"><strong>55.000đ</strong>
+      <button class="add-btn" onclick="addItem('Socola Latte', 55000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="noncoffee" data-kind="drink" data-name="Đá Xay Matcha" data-price="58000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/93/ef/b3/93efb372dd7bada6067f301455d66321.jpg" alt="Đá Xay Matcha" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Đá Xay Matcha</h3><p>Matcha xay mịn & kem whipping</p>
+    <div class="product-bottom"><strong>58.000đ</strong>
+      <button class="add-btn" onclick="addItem('Đá Xay Matcha', 58000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card" data-cat="noncoffee" data-kind="drink" data-name="Đá Xay Socola" data-price="58000">
+  <div class="product-img"><img src="https://i.pinimg.com/736x/9a/6f/a4/9a6fa4f30d01bdade6a9da1535e9ed8d.jpg" alt="Đá Xay Socola" loading="lazy"><span class="pill">MARÉ MENU</span></div>
+  <div class="product-body">
+    <h3>Đá Xay Socola</h3><p>Socola béo ngậy xay mịn</p>
+    <div class="product-bottom"><strong>58.000đ</strong>
+      <button class="add-btn" onclick="addItem('Đá Xay Socola', 58000, 'drink')">Thêm vào đơn</button>
+    </div>
+  </div>
+</article></div>
+</div>
+</section>
+
+<section class="container" id="why">
+<div class="split"><div class="photo"><img src="images/workshop-shell-craft.png" alt="Workshop handmade MARÉ"></div>
+<div><div class="eyebrow">Why MARÉ?</div><h2>Một trải nghiệm được tạo nên từ những điều nhỏ.</h2>
+<ul class="checklist"><li>Không gian coastal nhẹ nhàng, phù hợp học tập và trò chuyện.</li><li>Menu đồ uống đa dạng, có lựa chọn cà phê và non-coffee.</li><li>Nhiều workshop từ 39.000đ, phù hợp đi một mình hoặc đi cùng bạn bè.</li><li>Tự chọn nguyên liệu, màu sắc và phụ kiện cho thành phẩm.</li><li>Có thể đặt workshop trước để MARÉ chuẩn bị nguyên liệu theo nhóm.</li></ul></div></div>
+</section>
+
+<section class="workshop-section" id="workshop">
+<div class="container"><div class="section-head"><div class="eyebrow">Handmade Workshop</div><h2>Chọn workshop của bạn.</h2><p class="lead">Không chỉ có vỏ sò — MARÉ mở rộng nhiều trải nghiệm handmade để mỗi lần ghé quán là một ý tưởng mới.</p></div>
+<div class="workshop-grid">
+<article class="work-card"><img src="images/workshop-shell-craft.png" alt="Vòng tay & móc khóa" loading="lazy"><div class="wbody"><h3>Vòng tay & móc khóa</h3><p>Tự phối hạt, charm và màu sắc theo cá tính.</p><div class="wfoot"><span>39.000đ</span><button class="detail" onclick="showWorkshop(`Vòng tay & móc khóa`,`Tự phối hạt, charm và màu sắc theo cá tính.`,`39.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-shell-craft.png" alt="Phone charm vỏ sò" loading="lazy"><div class="wbody"><h3>Phone charm vỏ sò</h3><p>Vỏ sò, ngọc trai và charm cho điện thoại.</p><div class="wfoot"><span>45.000đ</span><button class="detail" onclick="showWorkshop(`Phone charm vỏ sò`,`Vỏ sò, ngọc trai và charm cho điện thoại.`,`45.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-gift.png" alt="Nón lá vỏ sò" loading="lazy"><div class="wbody"><h3>Nón lá vỏ sò</h3><p>Trang trí nón lá mini bằng vỏ sò và phụ kiện.</p><div class="wfoot"><span>59.000đ</span><button class="detail" onclick="showWorkshop(`Nón lá vỏ sò`,`Trang trí nón lá mini bằng vỏ sò và phụ kiện.`,`59.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-gift.png" alt="Ly thủ công vỏ sò" loading="lazy"><div class="wbody"><h3>Ly thủ công vỏ sò</h3><p>Tạo chiếc ly decor mang cảm hứng biển.</p><div class="wfoot"><span>69.000đ</span><button class="detail" onclick="showWorkshop(`Ly thủ công vỏ sò`,`Tạo chiếc ly decor mang cảm hứng biển.`,`69.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-shell-craft.png" alt="Tranh vỏ sò mini" loading="lazy"><div class="wbody"><h3>Tranh vỏ sò mini</h3><p>Sắp đặt vỏ sò thành tranh decor độc bản.</p><div class="wfoot"><span>79.000đ</span><button class="detail" onclick="showWorkshop(`Tranh vỏ sò mini`,`Sắp đặt vỏ sò thành tranh decor độc bản.`,`79.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-gift.png" alt="Gương vỏ sò mini" loading="lazy"><div class="wbody"><h3>Gương vỏ sò mini</h3><p>Tạo gương handmade xinh xắn để mang về.</p><div class="wfoot"><span>99.000đ</span><button class="detail" onclick="showWorkshop(`Gương vỏ sò mini`,`Tạo gương handmade xinh xắn để mang về.`,`99.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-coffee-create.png" alt="Thiệp & quà handmade" loading="lazy"><div class="wbody"><h3>Thiệp & quà handmade</h3><p>Tự làm set quà nhỏ cho người bạn thương.</p><div class="wfoot"><span>49.000đ</span><button class="detail" onclick="showWorkshop(`Thiệp & quà handmade`,`Tự làm set quà nhỏ cho người bạn thương.`,`49.000`)">Xem chi tiết</button></div></div></article><article class="work-card"><img src="images/workshop-coffee-create.png" alt="Coffee & Create" loading="lazy"><div class="wbody"><h3>Coffee & Create</h3><p>Combo đồ uống + một hoạt động handmade.</p><div class="wfoot"><span>89.000đ</span><button class="detail" onclick="showWorkshop(`Coffee & Create`,`Combo đồ uống + một hoạt động handmade.`,`89.000`)">Xem chi tiết</button></div></div></article>
+</div>
+</div></section>
+
+<section class="container" id="reviews">
+<div class="section-head"><div class="eyebrow">Customer stories</div><h2>Trải nghiệm được kể lại.</h2><p class="lead">Khu vực này có thể thay bằng review thật, ảnh khách hàng và đánh giá Google/Instagram khi MARÉ có dữ liệu chính thức.</p></div>
+<div class="reviews">
+<div class="review"><div class="stars">★★★★★</div><p>“Không gian hợp để ngồi học lâu. Workshop làm quà cũng khá thú vị, tự chọn được màu và phụ kiện.”</p><b>— Khách trải nghiệm MARÉ</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Đi cùng bạn bè làm phone charm, vừa uống nước vừa làm nên không bị nhàm. Thành phẩm mang về rất dễ thương.”</p><b>— Khách workshop</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Concept biển và handmade tạo cảm giác khác với một quán cà phê thông thường.”</p><b>— Khách trải nghiệm</b></div>
+</div>
+</section>
+
+<section class="booking-band" id="booking"><div class="container">
+<div class="booking-grid"><div class="booking-info"><div class="eyebrow" style="color:#9fd0d8">Booking</div><h2>Đặt một buổi thật riêng tại MARÉ.</h2><p>Chọn coffee, workshop hoặc đi nhóm. Nếu đã chọn đồ uống, đơn hàng của bạn sẽ được gửi kèm trong yêu cầu đặt lịch.</p>
+<div class="booking-points"><div class="bp">🕐 <b>24H</b><br><small>Không gian linh hoạt</small></div><div class="bp">🐚 <b>8+ workshop</b><br><small>Nhiều lựa chọn handmade</small></div><div class="bp">👥 <b>Đi nhóm</b><br><small>Đặt trước để chuẩn bị</small></div><div class="bp">☕ <b>Menu đa dạng</b><br><small>Coffee & non-coffee</small></div></div></div>
+<form class="form-card" onsubmit="submitBooking(event)">
+<div class="form-grid"><div><label>Họ và tên *</label><input id="name" required placeholder="Nguyễn Văn A"></div><div><label>Số điện thoại *</label><input id="phone" required placeholder="09xx xxx xxx"></div><div><label>Ngày đến *</label><input id="date" type="date" required></div><div><label>Số người</label><select id="people"><option>1 người</option><option>2 người</option><option>3–4 người</option><option>5–8 người</option><option>Trên 8 người</option></select></div><div class="full"><label>Trải nghiệm</label><select id="experience"><option>Coffee 24H</option><option>Workshop handmade</option><option>Coffee + Workshop</option><option>Đặt bàn nhóm</option></select></div><div class="full"><label>Ghi chú</label><textarea id="note" rows="3" placeholder="Workshop muốn làm, giờ dự kiến đến, yêu cầu đặc biệt..."></textarea></div></div>
+<button class="primary submit">Gửi yêu cầu đặt lịch</button><p id="bookingMsg" style="font-size:13px;color:#2f7286;margin:10px 0 0"></p></form></div>
+</div></section>
+</main>
+
+<footer class="footer"><div><h3>MARÉ Coffee</h3><p>Coffee 24H · Handmade Workshop · Good vibes</p><p>Không chỉ là cà phê, mà còn là nơi bạn tạo nên những điều riêng.</p></div>
+<div><h3>Khám phá</h3><p><a href="#menu">Menu đồ uống</a></p><p><a href="#workshop">Workshop</a></p><p><a href="#booking">Đặt lịch</a></p></div>
+<div><h3>Liên hệ</h3><p>📍 Địa chỉ: Cập nhật địa chỉ MARÉ</p><p>☎ Hotline: Cập nhật số điện thoại</p><p>✉ Email: Cập nhật email</p></div><div class="copyright">© 2026 MARÉ Coffee. Website concept phục vụ dự án thương hiệu.</div></footer>
+
+<button class="cart" onclick="toggleCart()">🛒 Đơn của bạn <span id="cartCount">0</span></button>
+<div class="drawer" id="drawer" onclick="if(event.target===this)toggleCart()"><aside class="cart-panel"><button class="close" onclick="toggleCart()">×</button><h2 style="font-size:34px;margin-top:5px">Đơn đã chọn</h2><p style="color:#6d7b80">Đồ uống và workshop bạn thêm sẽ xuất hiện ở đây.</p><div id="cartItems"></div><div class="total"><span>Tạm tính</span><span id="cartTotal">0đ</span></div><button class="primary" style="width:100%" onclick="useCartForBooking()">Đặt lịch với đơn này</button></aside></div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="modal-close" onclick="closeModal()">×</button><div class="eyebrow">Workshop MARÉ</div><h3 id="modalTitle"></h3><p id="modalDesc"></p><p><b>Giá tham khảo: <span id="modalPrice"></span>đ/người</b></p><p>Thời gian trải nghiệm dự kiến: 45–90 phút tùy workshop. Bạn có thể đặt trước để MARÉ chuẩn bị nguyên liệu.</p><button class="primary" onclick="addModalWorkshop()">Thêm workshop vào đơn</button></div></div>
+<div class="toast" id="toast"></div>
+<script>
+let cart=JSON.parse(localStorage.getItem('mareCart')||'[]'), modalWorkshop=null;
+const money=n=>new Intl.NumberFormat('vi-VN').format(n)+'đ';
+function saveCart(){localStorage.setItem('mareCart',JSON.stringify(cart));renderCart();}
+function addItem(name,price,kind){cart.push({name,price,kind});saveCart();toast(name+' đã được thêm vào đơn');}
+function removeItem(i){cart.splice(i,1);saveCart();}
+function renderCart(){document.getElementById('cartCount').textContent=cart.length;const box=document.getElementById('cartItems');if(!cart.length){box.innerHTML='<div class="empty">Chưa có sản phẩm nào.<br>Hãy chọn đồ uống hoặc workshop.</div>';document.getElementById('cartTotal').textContent='0đ';return}let total=0;box.innerHTML=cart.map((x,i)=>{total+=x.price;return `<div class="cart-item"><div><b>${x.name}</b><small>${x.kind==='workshop'?'Workshop':'Đồ uống'}</small></div><div><b>${money(x.price)}</b><button style="display:block;border:0;background:none;color:#b65b5b;cursor:pointer;font-size:11px" onclick="removeItem(${i})">Xóa</button></div></div>`}).join('');document.getElementById('cartTotal').textContent=money(total)}
+function toggleCart(){document.getElementById('drawer').classList.toggle('open');renderCart()}
+function filterProducts(cat,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product-card').forEach(x=>x.style.display=(cat==='all'||x.dataset.cat===cat)?'flex':'none')}
+function showWorkshop(name,desc,price){modalWorkshop={name,desc,price:Number(price.replaceAll('.',''))};document.getElementById('modalTitle').textContent=name;document.getElementById('modalDesc').textContent=desc;document.getElementById('modalPrice').textContent=price;document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function addModalWorkshop(){if(modalWorkshop)addItem(modalWorkshop.name,modalWorkshop.price,'workshop');closeModal();toggleCart()}
+function useCartForBooking(){toggleCart();document.getElementById('booking').scrollIntoView({behavior:'smooth'});document.getElementById('note').value=cart.map(x=>x.name).join(', ')}
+function submitBooking(e){e.preventDefault();let names=cart.map(x=>x.name).join(', ');document.getElementById('bookingMsg').textContent='Đã ghi nhận yêu cầu demo'+(names?' · Sản phẩm: '+names:'')+'. MARÉ sẽ liên hệ xác nhận.';e.target.reset()}
+function toast(t){const x=document.getElementById('toast');x.textContent='✓ '+t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)}
+renderCart();
+</script>
+</body></html>
